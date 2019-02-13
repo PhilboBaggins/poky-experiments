@@ -7,6 +7,7 @@ POKY_BRANCH="thud"
 
 SOURCE_DIR="$HOME/sources"
 BUILD_DIR="$HOME/build-poky"
+BITBAKE_RUN_SCRIPT="${HOME}/run-bitbake"
 
 function cloneRepoBranch()
 {
@@ -28,6 +29,14 @@ cloneRepoBranch "$POKY_BRANCH" "git://git.openembedded.org/meta-openembedded"
 
 rm -rf "${BUILD_DIR}"
 source "${SOURCE_DIR}/poky/oe-init-build-env" "${BUILD_DIR}"
+
+# Create a script to make running bitbake easier
+cat > "$BITBAKE_RUN_SCRIPT" << EOF
+#!/usr/bin/env bash
+source "${SOURCE_DIR}/poky/oe-init-build-env" "${BUILD_DIR}"
+exec bitbake \$@
+EOF
+chmod 755 "$BITBAKE_RUN_SCRIPT"
 
 # Set up bblayers.conf
 cat > "${BUILD_DIR}/conf/bblayers.conf" << EOF

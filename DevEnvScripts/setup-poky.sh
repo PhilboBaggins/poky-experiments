@@ -17,7 +17,7 @@ function cloneRepoBranch()
     if [ -d "$DEST_DIR" ]; then
         pushd "$DEST_DIR"
         git pull
-        popd
+        popd >> /dev/null
     else
         git clone -b "$BRANCH" "$URL" "$DEST_DIR"
     fi

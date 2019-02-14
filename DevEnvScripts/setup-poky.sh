@@ -6,7 +6,7 @@
 POKY_BRANCH="thud"
 
 SOURCE_DIR="$HOME/sources"
-BUILD_DIR="$HOME/build-poky"
+BUILD_DIR="$HOME/build"
 BITBAKE_RUN_SCRIPT="${HOME}/run-bitbake"
 
 function cloneRepoBranch()

@@ -67,5 +67,7 @@ cat >> "${BUILD_DIR}/conf/local.conf" << EOF
 # My config
 #
 INHERIT += "rm_work"
+#MACHINE ?= "qemux86-64"
+MACHINE ?= "genericx86-64"
 DL_DIR ?= "$DOWNLOAD_DIR"
 EOF

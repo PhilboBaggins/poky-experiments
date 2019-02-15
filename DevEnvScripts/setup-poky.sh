@@ -7,6 +7,7 @@ POKY_BRANCH="thud"
 
 SOURCE_DIR="$HOME/sources"
 BUILD_DIR="$HOME/build"
+DOWNLOAD_DIR="$HOME/downloads"
 BITBAKE_RUN_SCRIPT="${HOME}/run-bitbake"
 
 function cloneRepoBranch()
@@ -60,11 +61,11 @@ BBLAYERS_NON_REMOVABLE ?= " \\
 EOF
 
 # Set up local.conf
-cat >> "${BUILD_DIR}/conf/local.conf" << 'EOF'
+cat >> "${BUILD_DIR}/conf/local.conf" << EOF
 
 #
 # My config
 #
 INHERIT += "rm_work"
-MACHINE ?= "qemux86-64"
+DL_DIR ?= "$DOWNLOAD_DIR"
 EOF

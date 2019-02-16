@@ -5,10 +5,16 @@
 # https://wiki.yoctoproject.org/wiki/Stable_branch_maintenance
 POKY_BRANCH="thud"
 
-SOURCE_DIR="$HOME/sources"
-BUILD_DIR="$HOME/build"
-DOWNLOAD_DIR="$HOME/downloads"
-BITBAKE_RUN_SCRIPT="${HOME}/run-bitbake"
+if [ "$#" -gt 0 ]; then
+    BASE_DIR="$(realpath -- "$1")"
+else
+    BASE_DIR="$HOME"
+fi
+
+SOURCE_DIR="$BASE_DIR/sources"
+BUILD_DIR="$BASE_DIR/build"
+DOWNLOAD_DIR="$BASE_DIR/downloads"
+BITBAKE_RUN_SCRIPT="$BASE_DIR/run-bitbake"
 
 function cloneRepoBranch()
 {

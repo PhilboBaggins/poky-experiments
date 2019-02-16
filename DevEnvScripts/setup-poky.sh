@@ -8,7 +8,7 @@ POKY_BRANCH="thud"
 if [ "$#" -gt 0 ]; then
     BASE_DIR="$(realpath -- "$1")"
 else
-    BASE_DIR="$HOME"
+    BASE_DIR="$HOME/poky"
 fi
 
 SOURCE_DIR="$BASE_DIR/sources"

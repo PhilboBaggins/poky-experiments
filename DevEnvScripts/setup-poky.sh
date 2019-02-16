@@ -25,11 +25,14 @@ function cloneRepoBranch()
     fi
 }
 
+# Clone Poky source repos
 cloneRepoBranch "$POKY_BRANCH" "git://git.yoctoproject.org/poky"
 cloneRepoBranch "$POKY_BRANCH" "git://git.openembedded.org/meta-openembedded"
 
-rm -rf "${BUILD_DIR}"
-source "${SOURCE_DIR}/poky/oe-init-build-env" "${BUILD_DIR}"
+# Setup build dir build if it doesn't already exist
+if [ ! -d "$BUILD_DIR" ]; then
+    source "${SOURCE_DIR}/poky/oe-init-build-env" "${BUILD_DIR}"
+fi
 
 # Create a script to make running bitbake easier
 cat > "$BITBAKE_RUN_SCRIPT" << EOF

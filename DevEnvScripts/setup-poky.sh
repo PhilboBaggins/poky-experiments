@@ -52,17 +52,19 @@ POKY_BBLAYERS_CONF_VERSION = "2"
 
 BBPATH = "\${TOPDIR}"
 BBFILES ?= ""
+
 BBLAYERS ?= " \\
-    ${SOURCE_DIR}/poky/meta \\
-    ${SOURCE_DIR}/poky/meta-poky \\
-    ${SOURCE_DIR}/poky/meta-yocto-bsp \\
-    ${SOURCE_DIR}/meta-openembedded/meta-oe \\
-    ${SOURCE_DIR}/meta-openembedded/meta-multimedia \\
-    "
+  ${SOURCE_DIR}/poky/meta \\
+  ${SOURCE_DIR}/poky/meta-poky \\
+  ${SOURCE_DIR}/poky/meta-yocto-bsp \\
+  ${SOURCE_DIR}/meta-openembedded/meta-oe \\
+  ${SOURCE_DIR}/meta-openembedded/meta-multimedia \\
+  "
+
 BBLAYERS_NON_REMOVABLE ?= " \\
-    ${SOURCE_DIR}/poky/meta \\
-    ${SOURCE_DIR}/poky/meta-poky \\
-    "
+ ${SOURCE_DIR}/poky/meta \\
+ ${SOURCE_DIR}/poky/meta-poky \\
+ "
 EOF
 
 # Set up local.conf

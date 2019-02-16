@@ -52,7 +52,7 @@ chmod 755 "$BITBAKE_RUN_SCRIPT"
 
 # Set up bblayers.conf
 cat > "${BUILD_DIR}/conf/bblayers.conf" << EOF
-# LAYER_CONF_VERSION is increased each time build/conf/bblayers.conf
+# POKY_BBLAYERS_CONF_VERSION is increased each time build/conf/bblayers.conf
 # changes incompatibly
 POKY_BBLAYERS_CONF_VERSION = "2"
 

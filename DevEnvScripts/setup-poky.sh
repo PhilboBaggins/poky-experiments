@@ -31,7 +31,9 @@ cloneRepoBranch "$POKY_BRANCH" "git://git.openembedded.org/meta-openembedded"
 
 # Setup build dir build if it doesn't already exist
 if [ ! -d "$BUILD_DIR" ]; then
-    source "${SOURCE_DIR}/poky/oe-init-build-env" "${BUILD_DIR}"
+    source "${SOURCE_DIR}/poky/oe-init-build-env" "${BUILD_DIR}" >> /dev/null
+    mv "${BUILD_DIR}/conf/local.conf" "${BUILD_DIR}/conf/local.conf.sample"
+    mv "${BUILD_DIR}/conf/bblayers.conf" "${BUILD_DIR}/conf/bblayers.conf.sample"
 fi
 
 # Create a script to make running bitbake easier
@@ -64,11 +66,7 @@ BBLAYERS_NON_REMOVABLE ?= " \\
 EOF
 
 # Set up local.conf
-cat >> "${BUILD_DIR}/conf/local.conf" << EOF
-
-#
-# My config
-#
+cat > "${BUILD_DIR}/conf/local.conf" << EOF
 INHERIT += "rm_work"
 #MACHINE ?= "qemux86-64"
 MACHINE ?= "genericx86-64"

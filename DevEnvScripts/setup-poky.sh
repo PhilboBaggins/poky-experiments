@@ -63,8 +63,16 @@ BBLAYERS ?= " \\
   ${SOURCE_DIR}/poky/meta \\
   ${SOURCE_DIR}/poky/meta-poky \\
   ${SOURCE_DIR}/poky/meta-yocto-bsp \\
-  ${SOURCE_DIR}/meta-openembedded/meta-oe \\
+  ${SOURCE_DIR}/meta-openembedded/meta-filesystems \\
+  ${SOURCE_DIR}/meta-openembedded/meta-gnome \\
+  ${SOURCE_DIR}/meta-openembedded/meta-initramfs \\
   ${SOURCE_DIR}/meta-openembedded/meta-multimedia \\
+  ${SOURCE_DIR}/meta-openembedded/meta-networking \\
+  ${SOURCE_DIR}/meta-openembedded/meta-oe \\
+  ${SOURCE_DIR}/meta-openembedded/meta-perl \\
+  ${SOURCE_DIR}/meta-openembedded/meta-python \\
+  ${SOURCE_DIR}/meta-openembedded/meta-webserver \\
+  ${SOURCE_DIR}/meta-openembedded/meta-xfce \\
   "
 
 BBLAYERS_NON_REMOVABLE ?= " \\

@@ -6,8 +6,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     #config.vm.box = "debian/stretch64"     # Debian 9
     #config.vm.box = "hashicorp/precise64"  # Ubuntu 12.04 LTS
-    config.vm.box = "ubuntu/trusty64"      # Ubuntu 14.04 LTS
-    #config.vm.box = "ubuntu/xenial64"      # Ubuntu 16.04 LTS
+    #config.vm.box = "ubuntu/trusty64"      # Ubuntu 14.04 LTS
+    config.vm.box = "ubuntu/xenial64"      # Ubuntu 16.04 LTS
 
     config.disksize.size = '70GB'  # https://github.com/sprotheroe/vagrant-disksize
 
